@@ -4,7 +4,7 @@
  * @Email:  davidschmotz@gmail.com
  * @Filename: main.js
  * @Last modified by:   David
- * @Last modified time: 2020-08-17T20:04:51+02:00
+ * @Last modified time: 2020-08-17T20:31:41+02:00
  */
  const { app, BrowserWindow } = require('electron')
 
@@ -46,7 +46,3 @@
      createWindow()
    }
  })
-
- // In this file you can include the rest of your app's specific main process
- // code. Sie können den Code auch
- // auf mehrere Dateien aufteilen und diese hier einbinden.
