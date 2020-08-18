@@ -4,11 +4,16 @@
  * @Email:  davidschmotz@gmail.com
  * @Filename: actions.js
  * @Last modified by:   David
- * @Last modified time: 2020-08-18T17:21:53+02:00
+ * @Last modified time: 2020-08-18T17:52:53+02:00
  */
 
 const helper = require('./helper')
+const mainarea = require('./mainarea')
 
+
+/*
+
+*/
 const generateNumberBut = document.getElementById("generateNumberBut");
 generateNumberBut.addEventListener("click", () => {
   //
@@ -25,9 +30,14 @@ generateNumberBut.addEventListener("click", () => {
   //
   setInterval(function(){
     outputLabel.innerHTML = "";
+    mainarea.validate(randomNumbers.join(","))
   }, (n*700 + digits*1000) );
 });
 
+
+/*
+
+*/
 const generateSequenceBut = document.getElementById("generateSequenceBut");
 generateSequenceBut.addEventListener("click", () => {
   // get random sequence
@@ -39,6 +49,26 @@ generateSequenceBut.addEventListener("click", () => {
   // hide random sequence
   setInterval(function(){
     outputLabel.innerHTML = "";
+    mainarea.validate(randomSeq)
   }, (n*1000) );
-
 });
+
+
+
+/*
+
+*/
+const validateBut = document.getElementById("validateBut");
+validateBut.addEventListener("click", () => {
+  let validateField = document.getElementById("validateField");
+  let inp = validateField.value;
+  let answer = validateField.dataset.answer
+  console.log(answer)
+  console.log(inp)
+  if (inp === answer) {
+    validateField.style.background = "green";
+  } else {
+    validateField.style.background = "red";
+  }
+  outputLabel.innerHTML = (inp === answer);
+})

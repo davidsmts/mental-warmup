@@ -4,7 +4,7 @@
  * @Email:  davidschmotz@gmail.com
  * @Filename: helper.js
  * @Last modified by:   David
- * @Last modified time: 2020-08-18T17:21:15+02:00
+ * @Last modified time: 2020-08-18T17:23:29+02:00
  */
 
 
