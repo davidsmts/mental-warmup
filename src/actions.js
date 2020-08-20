@@ -4,11 +4,12 @@
  * @Email:  davidschmotz@gmail.com
  * @Filename: actions.js
  * @Last modified by:   David
- * @Last modified time: 2020-08-18T17:52:53+02:00
+ * @Last modified time: 2020-08-20T21:24:45+02:00
  */
 
 const helper = require('./helper')
 const mainarea = require('./mainarea')
+const { dialog } = require('electron').remote
 
 
 /*
@@ -71,4 +72,18 @@ validateBut.addEventListener("click", () => {
     validateField.style.background = "red";
   }
   outputLabel.innerHTML = (inp === answer);
+})
+
+
+/*
+
+*/
+const selectProblemCollection = document.getElementById("selectProblemCollection");
+selectProblemCollection.addEventListener("click", () => {
+  dialog.showOpenDialog({ properties: ['openDirectory', 'multiSelections'] }, function (files) {
+    if (files !== undefined) {
+      const Path = files[0] // TODO: doesnt log
+      console.log("pfad: " + Path)
+    }
+  })
 })

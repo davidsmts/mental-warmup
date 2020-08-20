@@ -4,7 +4,7 @@
  * @Email:  davidschmotz@gmail.com
  * @Filename: mainarea.js
  * @Last modified by:   David
- * @Last modified time: 2020-08-18T17:39:55+02:00
+ * @Last modified time: 2020-08-20T21:11:30+02:00
  */
 
 const validate = (answer) => {
@@ -13,6 +13,10 @@ const validate = (answer) => {
   validateField.style.display = "inline-block	";
   validateBut.style.display = "inline-block	";
   validateField.dataset.answer = answer;
+}
+
+const showPicture = () => {
+  
 }
 
 module.exports = {
